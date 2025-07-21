@@ -2,6 +2,7 @@ import os
 import environ
 from pathlib import Path
 
+
 env = environ.Env(
     DEBUG=(bool, True),
     SECRET_KEY=(str, "secret_key"),
@@ -12,7 +13,6 @@ env = environ.Env(
     DB_HOST=(str, "localhost"),
     DB_PORT=(str, "5432")
 )
-
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.gis',
     
-    'api.users'
+    'api.users',
+    'api.stock',
 ]
 
 MIDDLEWARE = [
@@ -107,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tashkent'
 
 USE_I18N = True
 

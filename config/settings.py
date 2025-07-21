@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
     'api.users',
     'api.stock',
+    'api.products',
 ]
 
 # Ninja JWT settings

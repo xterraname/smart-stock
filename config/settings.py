@@ -1,7 +1,8 @@
 import os
 import environ
 from pathlib import Path
-
+from datetime import timedelta
+from django.conf import settings
 
 env = environ.Env(
     DEBUG=(bool, True),
@@ -46,6 +47,11 @@ INSTALLED_APPS = [
     'api.stock',
 ]
 
+# Ninja JWT settings
+NINJA_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

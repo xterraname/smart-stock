@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{ project_name }}</title>
+  <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+      padding: 48px 24px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 720px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #111827;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      color: #4b5563;
+      margin-bottom: 8px;
+    }
+
+    .author {
+      font-size: 0.95rem;
+      color: #6b7280;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 12px 20px;
+      background-color: #111827;
+      color: white;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      transition: background 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #1f2937;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>{{ project_name }}</h1>
+    <p class="description">{{ description }}</p>
+    <p class="author">Author: {{ author }}</p>
+
+    <div class="buttons">
+      <a href="{{ github_url }}" target="_blank" class="btn">🔗 GitHub Repository</a>
+      <a href="{{ swagger_url }}" class="btn">📄 Swagger Docs</a>
+    </div>
+  </div>
+</body>
+</html>

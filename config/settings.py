@@ -8,6 +8,8 @@ env = environ.Env(
     DEBUG=(bool, True),
     SECRET_KEY=(str, "secret_key"),
     
+    ALLOWED_HOSTS=(list, ["*"]),
+    
     DB_NAME=(str, "name"),
     DB_USER=(str, "user"),
     DB_PASSWORD=(str, "password"),
@@ -27,7 +29,7 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env("ALLOWED_HOSTS")
 
 
 # Application definition

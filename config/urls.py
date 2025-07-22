@@ -4,6 +4,7 @@ from ninja_extra import NinjaExtraAPI
 from ninja_jwt.controller import NinjaJWTDefaultController
 
 from api.stock.api import router as stock_router
+from api.products.api import router as product_router
 from core.views import index_view
 
 
@@ -15,10 +16,11 @@ api = NinjaExtraAPI(
 )
 
 api.register_controllers(NinjaJWTDefaultController)
-api.add_router('stock', stock_router)
+api.add_router("stock", stock_router, tags=["stock"])
+api.add_router("products", product_router, tags=["product"])
 
 urlpatterns = [
     path("", index_view, name="home"),
-    path('supersmart/', admin.site.urls),
-    path('api/', api.urls)
+    path("supersmart/", admin.site.urls),
+    path("api/", api.urls),
 ]

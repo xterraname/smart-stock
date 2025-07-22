@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from api.products.models import Category, Product
+from api.products.models import Category, Product, WerehouseProduct
 
 
 @admin.register(Category)
@@ -17,7 +17,6 @@ class ProductAdmin(admin.ModelAdmin):
         "barcode",
         "category",
         "price",
-        "quantity_unit",
     )
     list_filter = ("is_active", "unit")
     readonly_fields = ("created_at", "updated_at")
@@ -31,7 +30,6 @@ class ProductAdmin(admin.ModelAdmin):
                     "barcode",
                     "category",
                     "price",
-                    "quantity",
                     "unit",
                     "is_active",
                 ]
@@ -39,3 +37,10 @@ class ProductAdmin(admin.ModelAdmin):
         ),
         ("Time", {"classes": ["wide"], "fields": ["created_at", "updated_at"]}),
     ]
+
+
+@admin.register(WerehouseProduct)
+class WerehouseProduct(admin.ModelAdmin):
+    list_display = ("werehouse", "product", "quantity", "updated_at")
+    list_filter = ("werehouse__name",)
+    list_editable = ("quantity",)

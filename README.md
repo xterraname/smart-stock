@@ -6,6 +6,9 @@ This project is ideal for showcasing backend development skills including API de
 
 ---
 
+## Preview
+https://smartstock.zumaredu.uz
+
 ## 🛠️ Tech Stack
 
 | Layer            | Technology                     |
